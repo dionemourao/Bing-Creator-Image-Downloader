@@ -96,7 +96,7 @@ Downloads all Bing Creator images from a collection
    ```
 4. Build the executable:
    ```bash
-   python3 -m PyInstaller --name=BingImageDownloader --windowed --onedir --add-data "config.toml:." --add-data ".env:." --add-data "images_clipboard.txt:." gui.py
+   python3 -m PyInstaller --name=BingImageDownloader --windowed --onedir --add-data "config.toml:." --add-data ".env:." --add-data "images_clipboard.txt:." --icon="icon.ico" gui.py
    ```
 5. The application will be in the `dist` folder as `BingImageDownloader.app`
 
