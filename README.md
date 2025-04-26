@@ -21,17 +21,86 @@ Downloads all Bing Creator images from a collection
    - Configure filename pattern and other options
 4. Click "Start Download" to begin
 
-#### Building Executable
-To create a standalone executable:
-1. Install PyInstaller:
+#### Building Executables
+
+### Windows
+1. Install Python 3.13 from [python.org](https://www.python.org/downloads/)
+2. Clone the repository:
    ```bash
-   pip install pyinstaller
+   git clone https://github.com/seu-usuario/Bing-Creator-Image-Downloader.git
+   cd Bing-Creator-Image-Downloader
    ```
-2. Run the build script:
+3. Install dependencies:
    ```bash
-   python build.py
+   pip install -r requirements.txt
    ```
-3. The executable will be created in the `dist` folder
+4. Build the executable:
+   ```bash
+   python -m PyInstaller --name=BingImageDownloader --windowed --onedir --add-data "config.toml;." --add-data ".env;." --add-data "images_clipboard.txt;." gui.py
+   ```
+5. The executable will be in the `dist/BingImageDownloader` folder
+
+### Linux (Ubuntu/Debian)
+1. Install system dependencies:
+   ```bash
+   sudo apt update
+   sudo apt install python3 python3-pip python3-venv python3-pyqt6
+   ```
+2. Clone the repository:
+   ```bash
+   git clone https://github.com/seu-usuario/Bing-Creator-Image-Downloader.git
+   cd Bing-Creator-Image-Downloader
+   ```
+3. Create and activate a virtual environment (recommended):
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+4. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+5. Build the executable:
+   ```bash
+   python3 -m PyInstaller --name=BingImageDownloader --windowed --onedir --add-data "config.toml:." --add-data ".env:." --add-data "images_clipboard.txt:." gui.py
+   ```
+6. The executable will be in the `dist/BingImageDownloader` folder
+
+### Linux (Fedora)
+1. Install system dependencies:
+   ```bash
+   sudo dnf install python3 python3-pip python3-venv python3-qt6
+   ```
+2. Follow steps 2-6 from Ubuntu instructions
+
+### Linux (Arch Linux)
+1. Install system dependencies:
+   ```bash
+   sudo pacman -S python python-pip python-venv python-pyqt6
+   ```
+2. Follow steps 2-6 from Ubuntu instructions
+
+### macOS
+1. Install Python 3.13 (using Homebrew recommended):
+   ```bash
+   brew install python@3.13
+   ```
+2. Clone the repository:
+   ```bash
+   git clone https://github.com/seu-usuario/Bing-Creator-Image-Downloader.git
+   cd Bing-Creator-Image-Downloader
+   ```
+3. Install dependencies:
+   ```bash
+   pip3 install -r requirements.txt
+   ```
+4. Build the executable:
+   ```bash
+   python3 -m PyInstaller --name=BingImageDownloader --windowed --onedir --add-data "config.toml:." --add-data ".env:." --add-data "images_clipboard.txt:." gui.py
+   ```
+5. The application will be in the `dist` folder as `BingImageDownloader.app`
+
+Note: The executables are platform-specific. You need to build them on each target operating system.
 
 #### Command Line Usage
 * Clone the repository or download and unzip
