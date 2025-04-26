@@ -1,9 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Type=Application
-Name=Bing Image Downloader
-Comment=Download images from Bing Image Creator
-Exec=/home/liveuser/Downloads/Bing-Creator-Image-Downloader/dist/BingImageDownloader
-Icon=/home/liveuser/Downloads/Bing-Creator-Image-Downloader/icon.png
-Terminal=false
-Categories=Graphics;Utility; 
