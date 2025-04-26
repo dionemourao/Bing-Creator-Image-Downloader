@@ -53,7 +53,12 @@ class ImageDownload:
         :return: None
         """
         logging.info(f"Starting download of {len(self.__images)} images.")
-        with zipfile.ZipFile(f"bing_images_{date.today()}.zip", "w") as zip_file:
+        
+        # Get destination folder from environment or use current directory
+        destination_folder = os.environ.get('DESTINATION_FOLDER', os.getcwd())
+        zip_filename = os.path.join(destination_folder, f"bing_images_{date.today()}.zip")
+        
+        with zipfile.ZipFile(zip_filename, "w") as zip_file:
             async with aiofiles.tempfile.TemporaryDirectory('wb') as temp_dir:
                 tasks = [
                     self.__download_and_save_image(image, temp_dir)

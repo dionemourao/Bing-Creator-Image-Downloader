@@ -5,6 +5,35 @@ Downloads all Bing Creator images from a collection
 * [Python 3.11+](https://www.python.org/downloads/)
 
 ### How to use
+#### GUI Application
+1. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+2. Run the GUI application:
+   ```bash
+   python gui.py
+   ```
+3. Configure the download settings:
+   - Choose between API or File download method
+   - For API method, enter your _U cookie value
+   - Specify collections to download (comma-separated)
+   - Configure filename pattern and other options
+4. Click "Start Download" to begin
+
+#### Building Executable
+To create a standalone executable:
+1. Install PyInstaller:
+   ```bash
+   pip install pyinstaller
+   ```
+2. Run the build script:
+   ```bash
+   python build.py
+   ```
+3. The executable will be created in the `dist` folder
+
+#### Command Line Usage
 * Clone the repository or download and unzip
 #### Collection API method:
 * Get your `_U` cookie for Bing. For example like described in this [comment](https://old.reddit.com/r/bing/comments/172rpo6/is_there_any_way_to_download_image_collections/k72vjqs/) or this [package](https://pypi.org/project/sydney-py/)
