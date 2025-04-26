@@ -16,7 +16,7 @@ def build_executable():
         '--add-data=config.toml:.',
         '--add-data=.env:.',
         '--add-data=images_clipboard.txt:.',
-        '--icon=icon.ico' if system == 'windows' else '',
+        '--icon=icon.ico',  # Use icon for all platforms
         '--hidden-import=PyQt6',
         '--hidden-import=PyQt6.QtCore',
         '--hidden-import=PyQt6.QtGui',
