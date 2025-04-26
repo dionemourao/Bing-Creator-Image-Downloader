@@ -17,6 +17,11 @@ def build_executable():
         '--add-data=.env:.',
         '--add-data=images_clipboard.txt:.',
         '--icon=icon.ico' if system == 'windows' else '',
+        '--hidden-import=PyQt6',
+        '--hidden-import=PyQt6.QtCore',
+        '--hidden-import=PyQt6.QtGui',
+        '--hidden-import=PyQt6.QtWidgets',
+        '--hidden-import=PyQt6.sip',
         'gui.py'
     ]
     
